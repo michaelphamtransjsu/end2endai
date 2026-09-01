@@ -2,6 +2,7 @@
 .venv/
 venv/
 env/
+ENV/
 
 # Python-generated files
 __pycache__/
@@ -12,6 +13,10 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.tox/
+.nox/
+.cache/
+.ipynb_checkpoints/
 
 # Coverage and build output
 .coverage
@@ -20,13 +25,60 @@ build/
 dist/
 *.egg-info/
 
+# Node dependencies, caches, and generated output
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+out/
+
+# Local datasets and data-science artifacts
+data/
+datasets/
+artifacts/
+outputs/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.arrow
+*.db
+*.sqlite
+*.sqlite3
+
+# Model checkpoints and serialized models
+checkpoints/
+models/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.h5
+*.joblib
+*.pkl
+
 # Environment variables and secrets
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials.*
 
 # Editors and operating systems
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
