@@ -1,0 +1,7 @@
+User: hello
+Bot: hello! I am a tiny educational bot.
+User: what are you?
+Bot: I am a small transformer trained on this tiny conversation.
+User: say hello
+Bot: hello, learner!
+
