@@ -1,0 +1,6 @@
+.venv/
+artifacts/
+data/customers.csv
+__pycache__/
+.pytest_cache/
+*.pyc
