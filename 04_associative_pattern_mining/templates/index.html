@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Basket Companion</title>
+  <style>
+    :root{font-family:system-ui,sans-serif;color:#17212b;background:#f3f6f4}body{max-width:760px;margin:3rem auto;padding:0 1rem}main{background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 30px #17352618}h1{margin-top:0;color:#164e3b}.items{display:flex;flex-wrap:wrap;gap:.6rem}label{border:1px solid #b8c8c0;border-radius:999px;padding:.55rem .8rem;cursor:pointer}label:has(input:checked){background:#d8f3e6;border-color:#217a59}button{margin-top:1.2rem;background:#176b4d;color:white;border:0;border-radius:8px;padding:.75rem 1rem;font-weight:700;cursor:pointer}li{margin:.7rem 0}.metric{color:#52645c;font-size:.9rem}#message{color:#9b2c2c}
+  </style>
+</head>
+<body><main><h1>Basket Companion</h1><p>Select products already in your basket. Recommendations are inferred from co-occurrence rules, not personal preferences.</p>
+  <form id="basket"><div class="items">{% for item in catalog %}<label><input type="checkbox" value="{{ item }}"> {{ item|title }}</label>{% endfor %}</div><button>Recommend additions</button></form>
+  <p id="message" role="alert"></p><ol id="results" aria-live="polite"></ol>
+</main><script>
+const form=document.querySelector('#basket'), results=document.querySelector('#results'), message=document.querySelector('#message');
+form.addEventListener('submit',async event=>{event.preventDefault();results.innerHTML='';message.textContent='';const items=[...form.querySelectorAll(':checked')].map(x=>x.value);if(!items.length){message.textContent='Select at least one product.';return}const response=await fetch('/api/recommend',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items})});const data=await response.json();if(!response.ok){message.textContent=data.error;return}if(!data.recommendations.length){message.textContent='No recommendation meets the configured thresholds.';return}for(const rec of data.recommendations){const li=document.createElement('li');li.innerHTML=`<strong>${rec.item}</strong> <span class="metric">confidence ${rec.confidence.toFixed(2)} · lift ${rec.lift.toFixed(2)} · support ${rec.support.toFixed(2)}</span>`;results.append(li)}});
+</script></body></html>
