@@ -1,0 +1,22 @@
+[
+  ["bread", "milk", "butter"],
+  ["bread", "milk"],
+  ["bread", "butter"],
+  ["milk", "cereal"],
+  ["bread", "milk", "eggs"],
+  ["pasta", "tomato sauce", "parmesan"],
+  ["pasta", "tomato sauce"],
+  ["pasta", "parmesan"],
+  ["tomato sauce", "parmesan"],
+  ["bread", "milk", "butter"],
+  ["chips", "salsa"],
+  ["chips", "salsa", "soda"],
+  ["chips", "soda"],
+  ["bread", "eggs"],
+  ["milk", "cereal"],
+  ["pasta", "tomato sauce", "parmesan"],
+  ["bread", "milk"],
+  ["chips", "salsa"],
+  ["bread", "butter"],
+  ["pasta", "tomato sauce"]
+]
