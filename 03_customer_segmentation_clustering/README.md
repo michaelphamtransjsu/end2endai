@@ -7,7 +7,7 @@ A local, reproducible CRISP-DM vertical slice that generates non-identifying sam
 Run these commands **from this directory** (Python 3.11+):
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m src.pipeline --data data/customers.csv --output artifacts
 .venv/bin/python -m pytest -q
