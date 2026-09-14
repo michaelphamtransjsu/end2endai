@@ -4,6 +4,16 @@ This repository is a workspace for six independent student projects. The
 project directories are currently scaffolds; this index does not claim that
 any project is implemented or runnable yet.
 
+## 🎥 Video Demo
+
+Watch the Part1 walkthrough here:
+
+[YouTube Video](https://youtu.be/_uWDVkaIbLs)
+
+Watch the project walkthrough here:
+
+[YouTube Video](https://youtu.be/woZjzBl7Uqc)
+
 | Directory | Planned project |
 | --- | --- |
 | [`00_dynamic_todo_workspace/`](00_dynamic_todo_workspace/) | Dynamic Todo Workspace |
