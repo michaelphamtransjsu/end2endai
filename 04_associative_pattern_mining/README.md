@@ -9,9 +9,9 @@ Run every command from `04_associative_pattern_mining`:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m market_basket.pipeline --output outputs/mining_results.json
-python -m pytest
+python3 -m pip install -r requirements.txt
+python3 -m market_basket.pipeline --output outputs/mining_results.json
+python3 -m pytest
 flask --app market_basket.app run --debug
 ```
 
@@ -29,7 +29,7 @@ The output directory is intentionally ignored because mined results are reproduc
 The CLI accepts `--data`, `--min-support`, `--min-confidence`, `--min-lift`, and optional `--output`. Fractions must be in `(0, 1]`; lift must be non-negative. Example:
 
 ```bash
-python -m market_basket.pipeline --data sample_transactions.json \
+python3 -m market_basket.pipeline --data sample_transactions.json \
   --min-support 0.15 --min-confidence 0.6 --min-lift 1.1 \
   --output outputs/mining_results.json
 ```
@@ -37,7 +37,7 @@ python -m market_basket.pipeline --data sample_transactions.json \
 The web app uses environment variables `MIN_SUPPORT`, `MIN_CONFIDENCE`, and `MIN_LIFT` (defaults: `0.15`, `0.5`, and `1.0`). Restart after changing them. To test only the pipeline:
 
 ```bash
-python -m pytest tests/test_mining.py
+python3 -m pytest tests/test_mining.py
 ```
 
 There is no training step in association-rule mining. The exact equivalent requested “training” command is the pipeline command above, which fits thresholds to the bundled transactions and emits itemsets/rules.
