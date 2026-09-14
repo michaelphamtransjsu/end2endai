@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+
+# User-provided raw/full datasets and archives
+data/NYC.csv
+data/full/
+*.zip
+
+# Generated model, database, and package artifacts
+*.pkl
+*.joblib
+*.sqlite
+*.db
+*.sqlite3
+*.egg
+*.whl
