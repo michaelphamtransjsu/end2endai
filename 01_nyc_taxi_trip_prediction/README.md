@@ -13,12 +13,12 @@ Optional full data: download the [NYC Taxi Trip Duration competition data from K
 Run from this directory (Python 3.11, 3.12, or 3.13; the pinned scientific stack is not released for Python 3.14):
 
 ```bash
-python3.11 -m venv .venv
+python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m pip install -e .
-python -m taxi_duration.train --data data/sample_trips.csv --output artifacts
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+python3 -m pip install -e .
+python3 -m taxi_duration.train --data data/sample_trips.csv --output artifacts
 pytest -q
 uvicorn taxi_duration.api:app --host 127.0.0.1 --port 8000
 ```
