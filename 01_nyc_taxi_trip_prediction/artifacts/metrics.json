@@ -1,0 +1,15 @@
+{
+  "split": "chronological_80_20",
+  "train_rows": 288,
+  "test_rows": 72,
+  "train_end": "2016-05-23 12:00:00",
+  "test_start": "2016-05-24 00:00:00",
+  "baseline": {
+    "mae_seconds": 337.806,
+    "rmsle": 0.49387
+  },
+  "improved": {
+    "mae_seconds": 46.663,
+    "rmsle": 0.11746
+  }
+}
